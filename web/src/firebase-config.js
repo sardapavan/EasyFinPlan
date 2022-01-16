@@ -7,7 +7,13 @@
  * 4. Copy the config object snippet, then add it here.
  */
 const config = {
-  /* TODO: ADD YOUR FIREBASE CONFIGURATION OBJECT HERE */
+  apiKey: "AIzaSyDILYmvhyBnegyCGb4eYfb5iuEI-JxpWbQ",
+  authDomain: "easyfinplan.firebaseapp.com",
+  projectId: "easyfinplan",
+  storageBucket: "easyfinplan.appspot.com",
+  messagingSenderId: "425580552581",
+  appId: "1:425580552581:web:58a6c72b881fb70ea5e4ec",
+  measurementId: "G-RP30EQG54R"
 };
 
 export function getFirebaseConfig() {
