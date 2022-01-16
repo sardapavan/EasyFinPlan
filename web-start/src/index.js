@@ -60,22 +60,24 @@ function signOutUser() {
 
 // Initiate firebase auth
 function initFirebaseAuth() {
-  // TODO 3: Subscribe to the user's signed-in status
+  onAuthStateChanged(getAuth(), authStateObserver);
 }
 
 // Returns the signed-in user's profile Pic URL.
 function getProfilePicUrl() {
-  // TODO 4: Return the user's profile pic URL.
+  return getAuth().currentUser.photoURL || '/images/profile_placeholder.png';
+
 }
 
 // Returns the signed-in user's display name.
 function getUserName() {
-  // TODO 5: Return the user's display name.
+    return getAuth().currentUser.displayName;
+
 }
 
 // Returns true if a user is signed-in.
 function isUserSignedIn() {
-  // TODO 6: Return true if a user is signed-in.
+  return !!getAuth().currentUser;
 }
 
 // Saves a new message on the Cloud Firestore.
@@ -142,11 +144,15 @@ function onMessageFormSubmit(e) {
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 function authStateObserver(user) {
+  console.log("I am in observer");
+    
   if (user) {
     // User is signed in!
     // Get the signed-in user's profile pic and name.
     var profilePicUrl = getProfilePicUrl();
     var userName = getUserName();
+
+    console.log("I am  authorized");
 
     // Set the user's profile pic and name.
     userPicElement.style.backgroundImage =
@@ -166,6 +172,8 @@ function authStateObserver(user) {
   } else {
     // User is signed out!
     // Hide user's profile and sign-out button.
+    console.log("I am  not authorized");
+
     userNameElement.setAttribute('hidden', 'true');
     userPicElement.setAttribute('hidden', 'true');
     signOutButtonElement.setAttribute('hidden', 'true');
