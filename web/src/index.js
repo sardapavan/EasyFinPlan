@@ -299,7 +299,7 @@
  
  // A loading image URL.
  var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
- 
+ /*
  // Delete a Message from the UI.
  function deleteMessage(id) {
    var div = document.getElementById(id);
@@ -308,6 +308,7 @@
      div.parentNode.removeChild(div);
    }
  }
+ 
  
  function createAndInsertMessage(id, timestamp) {
    const container = document.createElement('div');
@@ -379,9 +380,12 @@
    messageListElement.scrollTop = messageListElement.scrollHeight;
    messageInputElement.focus();
  }
+ */
  
  // Enables or disables the submit button depending on the values of the input
  // fields.
+
+ /*
  function toggleButton() {
    if (messageInputElement.value) {
      submitButtonElement.removeAttribute('disabled');
@@ -389,14 +393,15 @@
      submitButtonElement.setAttribute('disabled', 'true');
    }
  }
- 
+ */
+
  // Shortcuts to DOM Elements.
  //var messageListElement = document.getElementById('messages');
  //var messageFormElement = document.getElementById('message-form');
- var messageInputElement = document.getElementById('message');
+ //var messageInputElement = document.getElementById('message');
  //var submitButtonElement = document.getElementById('submit');
  //var imageButtonElement = document.getElementById('submitImage');
- var imageFormElement = document.getElementById('image-form');
+ //var imageFormElement = document.getElementById('image-form');
  //var mediaCaptureElement = document.getElementById('mediaCapture');
  var userPicElement = document.getElementById('user-pic');
  var userNameElement = document.getElementById('user-name');
